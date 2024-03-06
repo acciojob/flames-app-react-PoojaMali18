@@ -16,9 +16,23 @@ class App extends Component {
 
 
   removeCommonLetters = (str1, str2) => {
-    const result1 = [...str1].filter(char => !str2.includes(char)).join('');
-    const result2 = [...str2].filter(char => !str1.includes(char)).join('');
-
+    const charCount1 = {};
+    const charCount2 = {};
+  
+    // Count occurrences of each character in str1
+    for (const char of str1) {
+      charCount1[char] = (charCount1[char] || 0) + 1;
+    }
+  
+    // Count occurrences of each character in str2
+    for (const char of str2) {
+      charCount2[char] = (charCount2[char] || 0) + 1;
+    }
+  
+    // Remove common letters with proper occurrences from both strings
+    const result1 = [...str1].filter(char => charCount2[char]-- <= 0).join('');
+    const result2 = [...str2].filter(char => charCount1[char]-- <= 0).join('');
+  
     return [result1, result2];
   };
 
