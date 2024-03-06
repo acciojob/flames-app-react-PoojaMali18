@@ -62,11 +62,12 @@ class App extends Component {
     return (
       <div id="main">
         <form>
-          <input type="text" name="name1 "id="input1" data-testid="input1" onChange={(e) => this.setState({ name1: e.target.value })} value={this.state.name1} placeholder="Enter Name 1" />
-          <input type="text" id="input2" name="name2" data-testid="input2" onChange={(e) => this.setState({ name2: e.target.value })} value={this.state.name2} placeholder="Enter Name 2" />
+        <input type="text" name="name1" id="input1" data-testid="input1" onChange={(e) => this.setState({ name1: e.target.value })} value={this.state.name1} placeholder="Enter Name 1" />
+         <input type="text" id="input2" name="name2" data-testid="input2" onChange={(e) => this.setState({ name2: e.target.value })} value={this.state.name2} placeholder="Enter Name 2" />
           <button onClick={this.calculateRelationship} data-testid="calculate_relationship">Calculate Relationship Future</button>
           <button onClick={this.clearInputs} data-testid="clear">Clear</button>
-          <h3 id="relationshipResult">{this.state.relationshipStatus}</h3>
+          <h3 id="relationshipResult" data-testid="answer">{this.state.relationshipStatus}</h3>
+
         </form>
       </div>
     );
