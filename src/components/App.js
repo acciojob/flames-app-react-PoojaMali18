@@ -10,6 +10,11 @@ class App extends Component {
     };
   }
 
+  
+
+
+
+
   removeCommonLetters = (str1, str2) => {
     const result1 = [...str1].filter(char => !str2.includes(char)).join('');
     const result2 = [...str2].filter(char => !str1.includes(char)).join('');
@@ -61,7 +66,7 @@ class App extends Component {
           <input type="text" id="input2" data-testid="input2" onChange={(e) => this.setState({ name2: e.target.value })} value={this.state.name2} placeholder="Enter Name 2" />
           <button onClick={this.calculateRelationship} data-testid="calculate_relationship">Calculate Relationship Future</button>
           <button onClick={this.clearInputs} data-testid="clear">Clear</button>
-          <div id="relationshipResult">{this.state.relationshipStatus}</div>
+          <h3 id="relationshipResult">{this.state.relationshipStatus}</h3>
         </form>
       </div>
     );
