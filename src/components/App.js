@@ -34,28 +34,30 @@ class App extends Component {
     const [res1, res2] = this.removeCommonLetters(this.state.name1, this.state.name2);
     const sum = (res1.length + res2.length) % 6;
 
-    switch (sum) {
-      case 1:
-        this.setState({ relationshipStatus: 'Friends' });
-        break;
-      case 2:
-        this.setState({ relationshipStatus: 'Love' });
-        break;
-      case 3:
-        this.setState({ relationshipStatus: 'Affection' });
-        break;
-      case 4:
-        this.setState({ relationshipStatus: 'Marriage' });
-        break;
-      case 5:
-        this.setState({ relationshipStatus: 'Enemy' });
-        break;
-      case 0:
-        this.setState({ relationshipStatus: 'Siblings' });
-        break;
-      default:
-        this.setState({ relationshipStatus: 'Please Enter valid input' });
-    }
+    setTimeout(() => {
+        switch (sum) {
+          case 1:
+            this.setState({ relationshipStatus: 'Friends' });
+            break;
+          case 2:
+            this.setState({ relationshipStatus: 'Love' });
+            break;
+          case 3:
+            this.setState({ relationshipStatus: 'Affection' });
+            break;
+          case 4:
+            this.setState({ relationshipStatus: 'Marriage' });
+            break;
+          case 5:
+            this.setState({ relationshipStatus: 'Enemy' });
+            break;
+          case 0:
+            this.setState({ relationshipStatus: 'Siblings' });
+            break;
+          default:
+            this.setState({ relationshipStatus: 'Please Enter valid input' });
+        }
+      }, 0);
   };
 
   render() {
